@@ -6,8 +6,6 @@ import { IoIosPeople } from "react-icons/io";
 import { Children } from "react";
 import { FaChartBar, FaChartPie, FaChartLine, FaStopwatch, FaGamepad } from "react-icons/fa";
 
-
-
 const AdminSidebar = () => {
   const location = useLocation();
   // console.log("object location",location)
@@ -77,7 +75,6 @@ const AdminSidebar = () => {
   );
 };
 
-
 // ---------------------------------------------------------------------------------------
 //Created a Li => ListLink component to use above
 
@@ -97,9 +94,7 @@ const Li = ({ location,url ,Icon,text}: LiProps) => {
   );
 };
 
-
 // ---------------------------------------------------------------------------------------
-
 
 const Each = ({render, of}:any) => Children.toArray(of.map((item: any,index: any) => render(item, index)));
 
