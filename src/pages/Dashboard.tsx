@@ -4,6 +4,7 @@ import { BsSearch } from "react-icons/bs";
 import { HiTrendingUp, HiTrendingDown } from "react-icons/hi";
 import data from "../assets/data.json";
 import { Children } from "react";
+import BarChart from "../components/charts";
 
 const Each = ({render, of}:any) => Children.toArray(of.map((item: any,index: any) => render(item, index)));
 
@@ -37,8 +38,14 @@ const Dashboard = () => {
             <div className="revenue-chart">
                <h2>Revenue & Transaction</h2>
                {/* graph  */}
-
+             <BarChart data_1={[300,144,433,655,237,755,190]}
+             data_2={[200,444,343,556,778,445,990]}
+            title_1="Revenue" title_2="Transaction"
+            bgColor_1="rgb(0,115,255"
+            bgColor_2="rgb(53,162,235,0.8"
+             />
             </div>
+
             <div className="dashboard-categories">
               <h2>Inventory</h2>
              {/* Inventory  */}
