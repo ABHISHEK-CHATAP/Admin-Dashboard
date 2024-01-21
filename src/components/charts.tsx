@@ -1,25 +1,8 @@
 
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-  ChartData,
-  ChartOptions,
-} from 'chart.js';
-import { Bar } from 'react-chartjs-2';
+import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ChartData, ChartOptions, ArcElement,} from 'chart.js';
+import { Bar, Doughnut } from 'react-chartjs-2';
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-  );
+ChartJS.register( CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend , ArcElement);
   
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 
@@ -98,3 +81,54 @@ interface BarChartProps {
 export default BarChart;
 
 
+// ---------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------
+
+//  Creating Doughnut Chart for 3rd row Dashbaord drom above data set 
+
+interface DoughnutChartProps {
+  labels: string[];
+  data : number[];
+  bgColor : string[];
+  cutout?: number | string;
+  legends? : boolean;
+  offset?: number[];
+}
+
+ export const DonutChart = ({labels,data,bgColor,cutout,legends=true,offset}:DoughnutChartProps) => {
+
+  const dougnutData:ChartData<"doughnut", number[], string> = {
+    labels,
+    datasets: [{
+      data,
+      backgroundColor:bgColor,
+      borderWidth:0,
+      offset,
+    }]
+  };
+
+  const dougnutOptions:ChartOptions<"doughnut"> = {
+     responsive:true,
+     plugins:{
+        legend:{
+          display:legends,
+          position:"bottom",
+          labels:{
+            padding:40,
+          }
+        }      
+     },
+     cutout
+  };
+
+  return (
+  <>
+  <Doughnut data={dougnutData} options={dougnutOptions}/>
+  </>
+  )
+ }
+
+ // ---------------------------------------------------------------------------------------------------
+
+// ------------------------------------------------------------------------

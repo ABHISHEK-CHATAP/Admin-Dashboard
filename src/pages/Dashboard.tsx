@@ -4,9 +4,13 @@ import { BsSearch } from "react-icons/bs";
 import { HiTrendingUp, HiTrendingDown } from "react-icons/hi";
 import data from "../assets/data.json";
 import { Children } from "react";
-import BarChart from "../components/charts";
+import BarChart, { DonutChart } from "../components/charts";
+import { BiMaleFemale } from "react-icons/bi";
+import { PiDotOutlineLight } from "react-icons/pi";
 
 const Each = ({render, of}:any) => Children.toArray(of.map((item: any,index: any) => render(item, index)));
+
+import Table from "../components/DashboardTable"
 
 
 const Dashboard = () => {
@@ -58,6 +62,21 @@ const Dashboard = () => {
             </div>
           </section>
 
+
+          {/* donut chart- 3rd row  start*/}
+          <section className="transaction-container">
+           <div className="gender-chart">
+            <h2>Gender Ratio</h2>
+            {/* chart  */}
+            <DonutChart labels={["Female", "Male"]} data={[12,19]} bgColor={["hsl(340,82%,56%)", "rgba(53,162,235,0.8)"]}
+            cutout={60}/>
+            <p><BiMaleFemale/></p>
+           </div>
+
+           {/* table  */}
+           <Table data={data.transaction} />
+          </section>
+          {/* donut chart- 3rd row  end*/}
 
         </main>
         {/* main end */}
