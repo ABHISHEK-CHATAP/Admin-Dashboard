@@ -5,7 +5,7 @@
 // HOF => woh hota hai jo function return kre
 // HOC => woh hota hai jo component return kre
 
-import { useTable, Column, TableOptions } from "react-table";
+import { useTable, Column, TableOptions,useSortBy,usePagination } from "react-table";
 
 // type Temp ={
 //     status: string;
@@ -25,7 +25,7 @@ function TableHOC<T extends object>( columns: Column<T>[], data:T[], containerCl
     //  key and value same hai 
     }
 
-  const table = useTable(options,);
+  const table = useTable(options,useSortBy);
   const {getTableProps,getTableBodyProps,headerGroups,rows,prepareRow} = table;
 
     return (
@@ -33,17 +33,22 @@ function TableHOC<T extends object>( columns: Column<T>[], data:T[], containerCl
         <div className={containerClassnames}>
          <h2 className="heading">{heading}</h2>
 
-         <table className="table" {...getTableProps}>
+         <table className="table" {...getTableProps()}>
             <thead>
-                {headerGroups.map((headerGroup)=>{
+                {headerGroups.map((headerGroup,id)=>{
                     return(
                         <>
-                        <tr {...headerGroup.getFooterGroupProps()}>
-                            {headerGroup.headers.map((col)=>{
+                        <tr {...headerGroup.getFooterGroupProps()} key={id}>
+                            {headerGroup.headers.map((col:any)=>{
                                 return(
                                     <>
-                                    <th {...col.getHeaderProps()}>
-                                        {col.render("Header")}
+                                    <th {...col.getHeaderProps(col.getSortByToggleProps())}>
+                                        {col.render("Header")} {" "}
+                                        {
+                                            col.isSorted && (
+                                                <span>{col.isSortedDesc ? "⬇️" : "⬆️"}</span>
+                                            )
+                                        }
                                     </th>
                                     </>
                                 )

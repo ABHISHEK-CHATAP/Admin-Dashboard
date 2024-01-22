@@ -1,6 +1,7 @@
  // using , created mixins madentory to declare on top otherwise will give it error
  @import "mixin";
  @import "dashboard";
+ @import "./products";
 
 :root {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
