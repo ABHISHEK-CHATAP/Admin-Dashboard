@@ -10,9 +10,20 @@ const NewProduct = () => {
    const [photo, setPhoto] = useState<string>("");
 
    const changeImageHandler=(e:ChangeEvent<HTMLInputElement>)=>{
-     
-   }
+    //  ek toh file ho sakti hai ya undefined ho sakti hai ( File | undefined )
+     const file: File | undefined = e.target.files?.[0];
 
+     const reader :FileReader = new FileReader();
+
+     if(file){
+      reader.readAsDataURL(file);
+      reader.onloadend=()=>{
+        if(typeof reader.result === "string"){
+          setPhoto(reader.result)
+      }
+     }
+   }
+  }
 
   return (
     <>
@@ -41,7 +52,7 @@ const NewProduct = () => {
                     <label >Photo</label>
                     <input type="file" placeholder="Photo"  onChange={changeImageHandler} required />
                   </div>
-                  {photo && <img src={"photo"} alt="New_Img" />}
+                  {photo && <img src={photo} alt="New_Img" />}
                   <button type="submit">create</button>
                 </form>
               </article>

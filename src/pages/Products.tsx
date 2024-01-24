@@ -45,14 +45,14 @@ const arr: DataType[] = [
     name: "Pume shoes Air Jordan Cook Nigga 2023",
     price: 690,
     stock: 3,
-    action: <Link to="/admin/product/sajknaskd">Manage</Link>,
+    action: <Link to="/admin/products/sajknaskd">Manage</Link>,
   },
   {
     photo: <img src={img2} alt="mackbook" />,
     name: "Mackbook",
     price: 123000,
     stock: 213,
-    action: <Link to="/admin/product/sdaskdnkasjdn">Manage</Link>,
+    action: <Link to="/admin/products/sdaskdnkasjdn">Manage</Link>,
   },
 ];
 
