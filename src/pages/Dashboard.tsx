@@ -4,7 +4,7 @@ import { BsSearch } from "react-icons/bs";
 import { HiTrendingUp, HiTrendingDown } from "react-icons/hi";
 import data from "../assets/data.json";
 import { Children } from "react";
-import BarChart, { DonutChart } from "../components/charts";
+import  { DonutChart,BarChart } from "../components/charts";
 import { BiMaleFemale } from "react-icons/bi";
 import { PiDotOutlineLight } from "react-icons/pi";
 

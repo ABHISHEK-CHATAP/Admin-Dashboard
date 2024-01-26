@@ -57,7 +57,6 @@ const TransactionManagement = () => {
         <main className="new-product-management-container">
            <section>
             <h2>Order Items</h2>
-
             {
               order.orderItems.map((i,idx)=>(
                 <ProductCard key={idx} name={i.name} photo={i.photo} _id={i._id} price={i.price} quantity={i.quantity} />

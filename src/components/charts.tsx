@@ -1,8 +1,10 @@
 
-import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ChartData, ChartOptions, ArcElement,} from 'chart.js';
-import { Bar, Doughnut } from 'react-chartjs-2';
+import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ChartData, ChartOptions, ArcElement, PointElement, LineElement, Filler,} from 'chart.js';
+import { Bar, Doughnut, Line, Pie } from 'react-chartjs-2';
+// ye component banaya hai [[[ Bar, Doughnut,pie,line ]]] chart ke fir inhe use kr sakte hai ,
+//  just by calling kahi pr bhi bs data pass krkr
 
-ChartJS.register( CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend , ArcElement);
+ChartJS.register( CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend , ArcElement,PointElement,LineElement, Filler);
   
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 
@@ -11,14 +13,14 @@ interface BarChartProps {
   data_1 : number[];
   data_2 : number[];
   title_1 : string;
-  title_2 : string;
+  title_2: string;
   bgColor_1 : string;
   bgColor_2 : string;
   labels?: string[];
 }
 // sring[] || number[]  => array me nuber ya string 1 se zyada...
 
- const BarChart = ({horizontal=false, data_1=[],data_2=[],title_2,title_1,bgColor_1,bgColor_2,labels=months}:BarChartProps) =>{
+ export const BarChart = ({horizontal=false, data_1=[],data_2=[],title_2,title_1,bgColor_1,bgColor_2,labels=months}:BarChartProps) =>{
     
      const options:ChartOptions<"bar"> = {
       responsive: true,
@@ -72,13 +74,10 @@ interface BarChartProps {
 
     return(
      <>
-     <Bar options={options} data={data} />;
+     <Bar width={horizontal ? "200%" : ""} options={options} data={data} />;
     </>
     )
 }
-
-
-export default BarChart;
 
 
 // ---------------------------------------------------------------------------------------------------
@@ -131,4 +130,108 @@ interface DoughnutChartProps {
 
  // ---------------------------------------------------------------------------------------------------
 
-// ------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------------
+
+
+// Creating Pie chart for pie chart page
+
+interface PieChartProps {
+  labels: string[];
+  data : number[];
+  bgColor : string[];
+  offset?: number[];
+}
+
+ export const PieChart = ({labels,data,bgColor,offset}:PieChartProps) => {
+
+  const PieChartData:ChartData<"pie", number[], string> = {
+    labels,
+    datasets: [{
+      data,
+      backgroundColor:bgColor,
+      borderWidth:1,
+      offset,
+    }]
+  };
+
+  const PieChartOptions:ChartOptions<"pie"> = {
+     responsive:true,
+     plugins:{
+        legend:{
+          display:false,
+        }      
+     },
+  };
+
+  return (
+  <>
+  <Pie data={PieChartData} options={PieChartOptions}/>
+  </>
+  )
+ } 
+
+
+  // ---------------------------------------------------------------------------------------------------
+
+// ----------------------------------------------------------------------------------------------------
+
+
+// Creating Line Chart for in Line Chart Page
+
+interface LineChartProps {
+  data : number[];
+  label : string;
+  backgroundColor : string;
+  borderColor : string;
+  labels?: string[];
+}
+// sring[] || number[]  => array me nuber ya string 1 se zyada...
+
+ export const LineChart = ({data,label,backgroundColor,borderColor,labels=months}:LineChartProps) =>{
+    
+     const options:ChartOptions<"line"> = {
+      responsive: true,
+      plugins: {
+        legend: {
+         display:true,
+        },
+        title: {
+          display: false,
+          text: 'Chart.js Bar Chart',
+        },
+      },
+      scales: { 
+        y:{
+            beginAtZero:true,
+            grid:{
+                display: false,
+            }
+        },
+        x:{
+            grid:{
+                display: false,
+            }
+        },
+      }
+    };
+    
+     const lineChartData:ChartData<"line", number[], string> = {
+      labels,
+      datasets: [
+        {
+          fill:true,
+          label,
+          data,
+          backgroundColor,
+          borderColor,
+        }
+      ],
+    };
+
+
+    return(
+     <>
+     <Line  options={options} data={lineChartData} />;
+    </>
+    )
+}

@@ -18,9 +18,9 @@ const AdminSidebar = () => {
   ];
 
   const Charts = [
-    {url:"admin/chart/bar", text:"Bar", icon:<FaChartBar/>, location: location},
-    {url:"admin/chart/pie", text:"Pie",icon:<FaChartPie/>, location: location},
-    {url:"admin/chart/line", text:"Line",icon:<FaChartLine/>, location: location},
+    {url:"/admin/chart/bar", text:"Bar", icon:<FaChartBar/>, location: location},
+    {url:"/admin/chart/pie", text:"Pie",icon:<FaChartPie/>, location: location},
+    {url:"/admin/chart/line", text:"Line",icon:<FaChartLine/>, location: location},
   ];
 
   const Apps = [
