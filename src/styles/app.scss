@@ -1,81 +1,82 @@
- // using , created mixins madentory to declare on top otherwise will give it error
- @import "mixin";
- @import "dashboard";
- @import "./products";
- @import "./chart";
+// using , created mixins madentory to declare on top otherwise will give it error
+@import "mixin";
+@import "dashboard";
+@import "./products";
+@import "./chart";
+@import "./dashboardapp";
+// mediaquery ki file last me rakhna hamesha nhi toh css override ho sakti hai
+@import "./mediaquery";
 
 :root {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    font-weight: 400;
-  
-  }
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
 
-  //
-  *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+//
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  // for anchor tag
-  a{
-    text-decoration: none;
-    color: black;
-  }
+// for anchor tag
+a {
+  text-decoration: none;
+  color: black;
+}
 
-  //custom colors classNames
-  .red{
-    color: red;
-  }
-  .purple{
-    color: rgb(47,0,255);
-  }
-  .green{
-    color: rgb(0,195,0);
-  }
+//custom colors classNames
+.red {
+  color: red;
+}
+.purple {
+  color: rgb(47, 0, 255);
+}
+.green {
+  color: rgb(0, 195, 0);
+}
 
-  
 // --------------------------------------------------------------------------------------
 
-.adminContainer{
+.adminContainer {
   @include grid(1fr 4fr, 2rem);
   height: 100vh;
   background-color: rgb(241, 239, 239);
- 
-  // dono div ki ko grid me define krkr  and height 100vh and bg color deke 
-  // ab 
+
+  // dono div ki ko grid me define krkr  and height 100vh and bg color deke
+  // ab
   //dono div ke under cdd apply
   //width div ki apne ne he areav me 100%, bgcolor,padding
   // and main important [ overflow-y : auto ] mtlb apne hisaab se scroll aayega
   // &::webkit-scrollbar: display:none
 
-  >aside{
+  > aside {
     width: 100%;
     background-color: white;
     padding: 1rem;
     z-index: 10;
     overflow-y: auto;
-    &::-webkit-scrollbar{
+    &::-webkit-scrollbar {
       display: none;
     }
 
-    >div{
+    > div {
       margin: 2rem 1rem;
-      >h5{
+      > h5 {
         @include heading(2px);
         opacity: 0.8;
         margin: 1rem 0;
       }
-      >ul{
-        @include flex(column,unset,unset,0.5rem);
-        list-style:none;
-        >li{
+      > ul {
+        @include flex(column, unset, unset, 0.5rem);
+        list-style: none;
+        > li {
           padding: 0.5rem 1rem;
           border-radius: 10px;
-          a{
-            color: rgba(0,0,0,0.825);
-            @include flex(row,unset);
+          a {
+            color: rgba(0, 0, 0, 0.825);
+            @include flex(row, unset);
           }
         }
       }
@@ -83,17 +84,18 @@
   }
 }
 
- .table{
-  border-collapse :collapse;
+.table {
+  border-collapse: collapse;
   width: 100%;
 
-  th,td{
+  th,
+  td {
     padding: 8px;
     text-align: left;
     vertical-align: middle;
   }
-  
-  th{
+
+  th {
     font-weight: bold;
     color: #0000009e;
     font-size: 1.1rem;
@@ -101,28 +103,28 @@
     padding: 2rem 1rem;
   }
 
-  tbody{
-    tr{
-      box-shadow: 0px 1px 1px rgba(0,0,0,0.093);
+  tbody {
+    tr {
+      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.093);
     }
 
-    td{
+    td {
       padding: 1rem;
 
-      img{
+      img {
         width: 4rem;
         height: 4rem;
         object-fit: contain;
         border-radius: 10px;
       }
-      a{
+      a {
         text-decoration: none;
-        background-color: rgba(44,104,255,0.455);
-        color: rgba(44,104,255);
+        background-color: rgba(44, 104, 255, 0.455);
+        color: rgba(44, 104, 255);
         padding: 0.25rem 0.5rem;
         border-radius: 10px;
       }
-      button{
+      button {
         width: 2rem;
         height: 2rem;
         font-size: 1.1rem;
@@ -130,20 +132,85 @@
         outline: none;
         background-color: transparent;
         cursor: pointer;
-        color: rgb(255,44,44);
-        &:hover{
+        color: rgb(255, 44, 44);
+        &:hover {
           opacity: 0.6;
         }
       }
 
-      &:first-child{
-        border-left:none;
+      &:first-child {
+        border-left: none;
       }
 
-      &:last-child{
+      &:last-child {
         border-right: none;
       }
     }
   }
+}
 
- }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#hamburger {
+  display: grid;
+  place-items: center;
+  @include square(3rem);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: rgba(44, 104, 255);
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  font-size: 2rem;
+  background-color: white;
+  border-radius: 50%;
+  z-index: 9;
+}
+
+#closeModel {
+  @include square(2rem);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  font-size: 1rem;
+  background-color: rgb(255, 0, 0);
+  border-radius: 50%;
+}
+
+// #loader {
+//   height: 100%;
+//   width: 100%;
+//  @include flex;
+//  margin-top: 13rem;
+
+//   > div {
+//     @include square(7rem);
+//     border-radius: 50%;
+//     border-top: 0.7rem solid rgb(43, 43, 43);
+//     border-left: 0.7rem solid rgb(43, 43, 43);
+//     border-right: 0.7rem solid rgb(255, 255, 255);
+//     border-bottom: 0.7rem solid rgb(255, 255, 255);
+
+//     animation: loading-animation 0.7s linear infinite;
+//   }
+// }
+
+// @keyframes loading-animation {
+//   to {
+//     transform: rotateZ(360deg);
+//   }
+// }

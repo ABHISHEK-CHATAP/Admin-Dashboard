@@ -1,0 +1,68 @@
+@media screen and (width <= 1100px) {
+  .adminContainer {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
+
+@media screen and (width <= 1200px) {
+  .adminContainer {
+    overflow: auto;
+  }
+
+  .dashboard {
+    .widgetContainer,
+    .graphContainer,
+    .transaction-container {
+      justify-content: center;
+      padding: 2rem;
+      flex-wrap: wrap;
+    }
+    .transaction-container {
+      padding: 2rem;
+      height: unset;
+    }
+  }
+  .new-product-management-container {
+    padding: 2rem;
+  }
+}
+
+
+@media screen and (width <= 600px) {
+  .new-product-management-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    > section {
+      max-width: 400px;
+    }
+  }
+
+  // Bar Chart
+  .chart-container {
+    padding: 0;
+    > h1 {
+      margin: 0;
+      text-align: center;
+    }
+    > section {
+      margin: 8rem auto;
+    }
+  }
+
+  // Apps = stopwatch, coupon, toss
+  .dashboard-app-container > section {
+    .coupon-form  {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+     .stopwatch{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+  }
+}

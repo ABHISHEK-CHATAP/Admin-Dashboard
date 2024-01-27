@@ -2,7 +2,9 @@
 const Loaderr = () => {
   return (
    <>
-   <h1>Loading ... </h1>
+    <section id="loader">
+      <div></div>
+    </section>
    
    </>
   )

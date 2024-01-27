@@ -13,7 +13,11 @@ const TransactionManagement  = lazy(()=> import("./pages/management/TransactionM
 const Bar = lazy(()=> import("./pages/charts/Bar"));
 const Pie = lazy(()=> import("./pages/charts/Pie"));
 const Line = lazy(()=> import("./pages/charts/Line"));
-  
+//apps
+const Stopwatch = lazy(()=> import("./pages/apps/Stopwatch"));
+const Coupon = lazy(()=> import("./pages/apps/Coupon"));
+const Toss = lazy(()=> import("./pages/apps/Toss"));
+
 
 const App = () => {
 
@@ -34,6 +38,9 @@ const App = () => {
         <Route path="/admin/chart/line"  element={<Line/>} />
         
         {/* apps  */}
+        <Route path="/admin/app/stopwatch" element={<Stopwatch/>} />
+        <Route path="/admin/app/coupon" element={<Coupon/>} />
+        <Route path="/admin/app/toss" element={<Toss/>} />
 
         {/* management id's path */}
         <Route path="/admin/products/new" element={<NewProduct/>} />

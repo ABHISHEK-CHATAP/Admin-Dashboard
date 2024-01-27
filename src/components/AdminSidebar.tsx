@@ -1,14 +1,38 @@
 // import {  IconType } from "react-icons";
-import { Link, Location, useLocation } from "react-router-dom";
-import { RiDashboardFill, RiShoppingBag3Fill , RiCoupon3Fill} from "react-icons/ri";
+import { Children, useEffect, useState } from "react";
 import { AiFillFileText } from "react-icons/ai";
+import { FaChartBar, FaChartLine, FaChartPie, FaGamepad, FaStopwatch } from "react-icons/fa";
+import { HiMenuAlt1 } from "react-icons/hi";
 import { IoIosPeople } from "react-icons/io";
-import { Children } from "react";
-import { FaChartBar, FaChartPie, FaChartLine, FaStopwatch, FaGamepad } from "react-icons/fa";
+import { RiCoupon3Fill, RiDashboardFill, RiShoppingBag3Fill } from "react-icons/ri";
+import { Link, Location, useLocation } from "react-router-dom";
 
 const AdminSidebar = () => {
   const location = useLocation();
   // console.log("object location",location)
+
+  // ------------------------------------------------------------------------------------------------------
+  // ------------------------------------------------------------------------------------------------------
+  // for resonsive sidebar close & open
+  const [ showModel, setShowModel] = useState<boolean>(false);
+  const [ phoneActive, setPhoneActive] = useState<boolean>(window.innerWidth < 1100);
+  // screen resize ke sath reload karna pad raha resopnsive check krne k liye == to avid this
+  const resizeHandler = () =>{
+    setPhoneActive(window.innerWidth < 1100)
+  } ;
+
+  useEffect(()=>{
+    window.addEventListener("resize", resizeHandler);
+    return ()=>{
+      window.removeEventListener("resize", resizeHandler);
+    }
+  },[])
+
+  // ab sereen reload nhi krni padegi resize eventListener se automatic ho jayega
+   // ------------------------------------------------------------------------------------------------------
+  // ------------------------------------------------------------------------------------------------------
+
+
 
   const ListLink = [
     { url: "/admin/dashboard", text: "Dashboard" , icon: <RiDashboardFill/>, location: location  },
@@ -24,15 +48,33 @@ const AdminSidebar = () => {
   ];
 
   const Apps = [
-    {url:"admin/app/stopwatch", text:"Stopwatch", icon:<FaStopwatch/>, location: location},
-    {url:"admin/app/coupon", text:"Coupon",icon:<RiCoupon3Fill/>, location: location},
-    {url:"admin/app/toss", text:"Toss",icon:<FaGamepad/>, location: location},
+    {url:"/admin/app/stopwatch", text:"Stopwatch", icon:<FaStopwatch/>, location: location},
+    {url:"/admin/app/coupon", text:"Coupon",icon:<RiCoupon3Fill/>, location: location},
+    {url:"/admin/app/toss", text:"Toss",icon:<FaGamepad/>, location: location},
   ]
 
   return (
     <>
-      <aside>
-        <h2>Logo.</h2>
+      {phoneActive && (
+        <button id="hamburger" onClick={()=> setShowModel(true)}>
+          <HiMenuAlt1 />
+        </button>
+      )}
+
+
+      <aside style={phoneActive ? {
+          width:"20rem",
+          height:"100vh",
+          position:"fixed",
+          top:0,
+          left: showModel ? "0":"-20rem",
+          transition: "all 0.5s",
+        }: {}}>
+          
+          <div style={{display:"flex",justifyContent:"space-between"}}>
+          <h2>Logo.</h2>
+          {phoneActive && (<button id="closeModel" onClick={()=>setShowModel(false)}>X</button>)}
+          </div>
         {/* dashboard start  */}
         <div>
           <h5>Dashboard</h5>
