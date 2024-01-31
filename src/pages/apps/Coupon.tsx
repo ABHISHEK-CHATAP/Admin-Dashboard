@@ -1,10 +1,10 @@
-// import { FormEvent, useEffect, useState } from "react";
-// import AdminSidebar from "../../components/AdminSidebar";
+import { FormEvent, useEffect, useState } from "react";
+import AdminSidebar from "../../components/AdminSidebar";
 
 
-// const  allLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxy";
-// const allNumbers = "0123456789";
-// const allSymbols = "!@#$%^&*()_+-./:;<=>?";
+const  allLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxy";
+const allNumbers = "0123456789";
+const allSymbols = "!@#$%^&*()_+-./:;<=>?";
 
 // const Coupon = () => {
 //   const [size, setSize] = useState<number>(8);
