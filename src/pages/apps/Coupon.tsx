@@ -6,15 +6,15 @@ const  allLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxy";
 const allNumbers = "0123456789";
 const allSymbols = "!@#$%^&*()_+-./:;<=>?";
 
-// const Coupon = () => {
-//   const [size, setSize] = useState<number>(8);
-//   const [prefix, setprefix] = useState<string>("");
-//   const [includeNumbers, setIncludeNumbers] = useState<boolean>(false);
-//   const [includeCharacters, setIncludeCharacters] = useState<boolean>(false);
-//   const [includeSymbols, setIncludeSymbols] = useState<boolean>(false);
-//   const [isCopied, setIsCopied] = useState<boolean>(false);
+const Coupon = () => {
+  const [size, setSize] = useState<number>(8);
+  const [prefix, setprefix] = useState<string>("");
+  const [includeNumbers, setIncludeNumbers] = useState<boolean>(false);
+  const [includeCharacters, setIncludeCharacters] = useState<boolean>(false);
+  const [includeSymbols, setIncludeSymbols] = useState<boolean>(false);
+  const [isCopied, setIsCopied] = useState<boolean>(false);
 
-//   const [coupon, setCoupon] = useState<string>("");
+  const [coupon, setCoupon] = useState<string>("");
 
 //   // copy to clipboard function
 //   const CopyText = async(coupon:string)=>{
