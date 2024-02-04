@@ -16,17 +16,17 @@ const Coupon = () => {
 
   const [coupon, setCoupon] = useState<string>("");
 
-//   // copy to clipboard function
-//   const CopyText = async(coupon:string)=>{
-//     await  window.navigator.clipboard.writeText(coupon);
+  // copy to clipboard function
+  const CopyText = async(coupon:string)=>{
+    await  window.navigator.clipboard.writeText(coupon);
 
-//      //async mhi dia tha toh CopyText pr hover pr function void return kr raha tha
-//      // fir await ki jagah return kia or function pr hover kia toh fir[[ =>Promise<void>]] return kr rha tha
-//      //toh isliye async - awiat use krna pada
-//      // then setIsCopied ko true = to get copied msg 
+     //async mhi dia tha toh CopyText pr hover pr function void return kr raha tha
+     // fir await ki jagah return kia or function pr hover kia toh fir[[ =>Promise<void>]] return kr rha tha
+     //toh isliye async - awiat use krna pada
+     // then setIsCopied ko true = to get copied msg 
 
-//     setIsCopied(true);
-//   }
+    setIsCopied(true);
+  }
 
 //   // form OnSubmit function
 //   const submitHandler=(e:FormEvent<HTMLFormElement>)=>{
