@@ -28,15 +28,15 @@ const Coupon = () => {
     setIsCopied(true);
   }
 
-//   // form OnSubmit function
-//   const submitHandler=(e:FormEvent<HTMLFormElement>)=>{
-//     e.preventDefault();
+  // form OnSubmit function
+  const submitHandler=(e:FormEvent<HTMLFormElement>)=>{
+    e.preventDefault();
 
-//     if(!includeNumbers && !includeCharacters && !includeSymbols){
-//       return alert("Please select One At least ");
-//     }
+    if(!includeNumbers && !includeCharacters && !includeSymbols){
+      return alert("Please select One At least ");
+    }
 
-//     let result : string = prefix || "";
+    let result : string = prefix || "";
 
 //     const loopLength:number = size - result.length;
 
