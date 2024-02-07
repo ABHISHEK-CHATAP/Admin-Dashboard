@@ -38,11 +38,11 @@ const Coupon = () => {
 
     let result : string = prefix || "";
 
-//     const loopLength:number = size - result.length;
+    const loopLength:number = size - result.length;
 
-//     for(let i = 0; i < loopLength; i++){
+    for(let i = 0; i < loopLength; i++){
 
-//       let entireString:string = "";
+      let entireString:string = "";
 
 //       if(includeNumbers) entireString += allNumbers;
 //       if(includeCharacters) entireString += allLetters;
