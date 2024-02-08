@@ -48,12 +48,12 @@ const Coupon = () => {
       if(includeCharacters) entireString += allLetters;
       if(includeSymbols) entireString += allSymbols;
 
-//       //[wrap into (Math.floor || ~~)]
-//       const RandomNumbers:number = ~~(Math.random()*entireString.length);
-//       result += entireString[RandomNumbers]
+      //[wrap into (Math.floor || ~~)]
+      const RandomNumbers:number = ~~(Math.random()*entireString.length);
+      result += entireString[RandomNumbers]
 
-//       setCoupon(result);
-//     }
+      setCoupon(result);
+    }
 
 //   }
 
