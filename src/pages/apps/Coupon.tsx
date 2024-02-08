@@ -44,9 +44,9 @@ const Coupon = () => {
 
       let entireString:string = "";
 
-//       if(includeNumbers) entireString += allNumbers;
-//       if(includeCharacters) entireString += allLetters;
-//       if(includeSymbols) entireString += allSymbols;
+      if(includeNumbers) entireString += allNumbers;
+      if(includeCharacters) entireString += allLetters;
+      if(includeSymbols) entireString += allSymbols;
 
 //       //[wrap into (Math.floor || ~~)]
 //       const RandomNumbers:number = ~~(Math.random()*entireString.length);
