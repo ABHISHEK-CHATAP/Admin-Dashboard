@@ -62,11 +62,11 @@ const Coupon = () => {
     setIsCopied(false)
   },[coupon])
 
-//   return (
-//     <>
-//       <div className="adminContainer">
-//         {/* sidebar  */}
-//         <AdminSidebar />
+  return (
+    <>
+      <div className="adminContainer">
+        {/* sidebar  */}
+        <AdminSidebar />
 
 //         {/* main  */}
 //         <main className="dashboard-app-container">
