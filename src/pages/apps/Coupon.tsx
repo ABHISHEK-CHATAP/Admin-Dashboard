@@ -57,10 +57,10 @@ const Coupon = () => {
 
 //   }
 
-//   //every [coupon] change hoga toh setIsCopied(false) => means fir se copy krne ka option milega
-//   useEffect(()=>{
-//     setIsCopied(false)
-//   },[coupon])
+  //every [coupon] change hoga toh setIsCopied(false) => means fir se copy krne ka option milega
+  useEffect(()=>{
+    setIsCopied(false)
+  },[coupon])
 
 //   return (
 //     <>
