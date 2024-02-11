@@ -74,12 +74,12 @@ const Coupon = () => {
 //           <section>
 //             <form className="coupon-form" onSubmit={submitHandler}>
 //               <input
-//                 type="text"
-//                 placeholder="Text to include in Coupon "
-//                 value={prefix}
-//                 onChange={(e) => setprefix(e.target.value)}
-//                 maxLength={size}
-//               />
+                type="text"
+                placeholder="Text to include in Coupon "
+                value={prefix}
+                onChange={(e) => setprefix(e.target.value)}
+                maxLength={size}
+              />
 
 //               <input
 //                 type="number"
