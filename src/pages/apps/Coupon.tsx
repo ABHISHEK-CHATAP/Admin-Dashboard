@@ -82,14 +82,14 @@ const Coupon = () => {
               />
 
 //               <input
-//                 type="number"
-//                 placeholder="coupon length"
-//                 value={size}
-//                 onChange={(e) => setSize(Number(e.target.value))}
-//                 maxLength={size} 
-//                 min={8}
-//                 max={25}
-//               />
+                type="number"
+                placeholder="coupon length"
+                value={size}
+                onChange={(e) => setSize(Number(e.target.value))}
+                maxLength={size} 
+                min={8}
+                max={25}
+              />
 
 //               <fieldset>
 //                 <legend>Include</legend>
