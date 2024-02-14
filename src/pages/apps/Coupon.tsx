@@ -68,12 +68,12 @@ const Coupon = () => {
         {/* sidebar  */}
         <AdminSidebar />
 
-//         {/* main  */}
-//         <main className="dashboard-app-container">
-//           <h1>Coupon</h1>
-//           <section>
-//             <form className="coupon-form" onSubmit={submitHandler}>
-//               <input
+          {/* main  */}
+         <main className="dashboard-app-container">
+            <h1>Coupon</h1>
+             <section>
+               <form className="coupon-form" onSubmit={submitHandler}>
+               <input
                 type="text"
                 placeholder="Text to include in Coupon "
                 value={prefix}
@@ -81,7 +81,7 @@ const Coupon = () => {
                 maxLength={size}
               />
 
-//               <input
+               <input
                 type="number"
                 placeholder="coupon length"
                 value={size}
@@ -91,15 +91,15 @@ const Coupon = () => {
                 max={25}
               />
 
-//               <fieldset>
-//                 <legend>Include</legend>
+               <fieldset>
+                  <legend>Include</legend>
 
-//                 <input
-//                   type="checkbox"
-//                   checked={includeNumbers}
-//                   onChange={() => setIncludeNumbers((prev) => !prev)}
-//                 />
-//                 <span>Numbers</span>
+                  <input
+                    type="checkbox"
+                    checked={includeNumbers}
+                    onChange={() => setIncludeNumbers((prev) => !prev)}
+                  />
+                  <span>Numbers</span>
 
 //                 <input
 //                   type="checkbox"
