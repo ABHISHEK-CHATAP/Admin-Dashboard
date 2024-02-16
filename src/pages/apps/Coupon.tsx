@@ -101,12 +101,12 @@ const Coupon = () => {
                   />
                   <span>Numbers</span>
 
-//                 <input
-//                   type="checkbox"
-//                   checked={includeCharacters}
-//                   onChange={() => setIncludeCharacters((prev) => !prev)}
-//                 />
-//                 <span>Characters</span>
+                      <input
+                     type="checkbox"
+                     checked={includeCharacters}
+                     onChange={() => setIncludeCharacters((prev) => !prev)}
+                   />
+                  <span>Characters</span>
 
 //                 <input
 //                   type="checkbox"
