@@ -108,14 +108,14 @@ const Coupon = () => {
                    />
                   <span>Characters</span>
 
-//                 <input
-//                   type="checkbox"
-//                   checked={includeSymbols}
-//                   onChange={() => setIncludeSymbols((prev) => !prev)}
-//                 />
-//                 <span>Symbols</span>
+                   <input
+                     type="checkbox"
+                     checked={includeSymbols}
+                      onChange={() => setIncludeSymbols((prev) => !prev)}
+                   />
+                   <span>Symbols</span>
 
-//               </fieldset>
+                 </fieldset>
 
 //               <button type="submit">Generate</button>
 //             </form>
