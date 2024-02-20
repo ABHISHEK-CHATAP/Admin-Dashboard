@@ -125,12 +125,12 @@ const Coupon = () => {
                    {coupon}{" "}
                    <span onClick={() => CopyText(coupon)}>
                      {isCopied ? "Copied" : "Copy"}
-//                 </span>
-//               </code>
-//             )}
-//           </section>
-//         </main>
-//       </div>
+                   </span>
+                </code>
+               )}
+             </section>
+          </main>
+         </div>
 //     </>
 //   );
 // };
