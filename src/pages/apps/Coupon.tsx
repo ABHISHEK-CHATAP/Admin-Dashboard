@@ -131,8 +131,8 @@ const Coupon = () => {
              </section>
           </main>
          </div>
-//     </>
-//   );
-// };
+       </>
+     );
+   };
 
-// export default Coupon;
+ export default Coupon;
