@@ -134,5 +134,5 @@ const Coupon = () => {
        </>
      );
    };
-
- export default Coupon;
+  }
+  export default Coupon
