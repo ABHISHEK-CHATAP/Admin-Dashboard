@@ -1,7 +1,7 @@
-// import { useState } from "react"
-// import AdminSidebar from "../../components/AdminSidebar"
-// import head from "../../assets/Images/head.jpg";
-// import tail from "../../assets/Images/tail.jpg";
+import { useState } from "react"
+import AdminSidebar from "../../components/AdminSidebar"
+import head from "../../assets/Images/head.jpg";
+import tail from "../../assets/Images/tail.jpg";
 
 // const Toss = () => {
 
