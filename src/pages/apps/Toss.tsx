@@ -3,12 +3,12 @@ import AdminSidebar from "../../components/AdminSidebar"
 import head from "../../assets/Images/head.jpg";
 import tail from "../../assets/Images/tail.jpg";
 
-// const Toss = () => {
+const Toss = () => {
 
-//   const [angle, setAngle] = useState<number>(0);
+  const [angle, setAngle] = useState<number>(0);
 
-//   const FlipCoin = () => {
-//     if (Math.random() > 0.5){
+  const FlipCoin = () => {
+    if (Math.random() > 0.5){
 //       setAngle((prev)=> prev + 180);
 //     }else{
 //       setAngle((prev)=>prev + 360);
