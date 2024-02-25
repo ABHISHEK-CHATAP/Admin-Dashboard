@@ -9,10 +9,10 @@ const Toss = () => {
 
   const FlipCoin = () => {
     if (Math.random() > 0.5){
-//       setAngle((prev)=> prev + 180);
-//     }else{
-//       setAngle((prev)=>prev + 360);
-//     }
+      setAngle((prev)=> prev + 180);
+    }else{
+      setAngle((prev)=>prev + 360);
+    }
 //   }
 
 //   return (
